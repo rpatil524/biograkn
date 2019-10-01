@@ -29,7 +29,8 @@ jobs:
       - install-bazel-linux-rbe
       - checkout
       #      - run: bazel run @graknlabs_build_tools//checkstyle:test-coverage
-      - run: bazel --host_jvm_args=-Xmx16g build //...
+      - run-bazel-rbe:
+          command: bazel build //...
 
   test-assembly-linux-mock:
     machine: true
